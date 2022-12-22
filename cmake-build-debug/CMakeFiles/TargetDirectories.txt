@@ -1,0 +1,3 @@
+D:/Mis documentos/Documentos/GitHub/Taller/cmake-build-debug/CMakeFiles/Taller.dir
+D:/Mis documentos/Documentos/GitHub/Taller/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Mis documentos/Documentos/GitHub/Taller/cmake-build-debug/CMakeFiles/rebuild_cache.dir
