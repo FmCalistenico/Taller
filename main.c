@@ -2,6 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <math.h>
+#include <stdlib.h>
 
 //Numeros Romanos
 int romanToInt(char *s) {
@@ -266,11 +267,11 @@ int multiplicacionMatriz() {
         }
     } else {
         printf("Null\n");
-        return NULL;
+        return 0;
 
     }
 
-    return NULL;
+    return aux;
 }
 
 
