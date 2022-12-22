@@ -182,7 +182,7 @@ int productoPunto() {
 
 
         printf("Null\n");
-        return NULL;
+        return 0;
 
     }
 
