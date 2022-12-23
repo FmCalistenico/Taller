@@ -166,7 +166,7 @@ int productoPunto() {
     printf("\nIngrese la longitud del vector 1\n");
     scanf("%d", &lenOne);
 
-    printf("Ingrese la longitud del vector 2\n");
+    printf("\nIngrese la longitud del vector 2\n");
     scanf("%d", &lenTwo);
 
 
@@ -199,7 +199,7 @@ int productoPunto() {
 
 }
 
-void multiplicacionMatriz() {
+int multiplicacionMatriz() {
     int a[15][15], b[15][15], c[15][15];
     int f1, f2, c1, c2;
 
@@ -242,7 +242,7 @@ void multiplicacionMatriz() {
             }
         }
 
-        printf("\n ----- Primer matriz -----");
+        printf("\nPrimer matriz8");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c1; ++j) {
@@ -250,79 +250,28 @@ void multiplicacionMatriz() {
             }
         }
 
-        printf("\n ----- Segunda matriz -----");
+        printf("\n Segunda matriz");
         for (int i = 0; i < f2; ++i) {
             printf("\n");
             for (int j = 0; j < c2; ++j) {
-                printf("\t%d", b[i][j]);
+                printf("%d", b[i][j]);
             }
         }
 
-        printf("\n --- Multiplicacion de matriz ---");
+        printf("\n Multiplicacion de matriz\n");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c2; ++j) {
-                printf("\t%d", c[i][j]);
+                printf("%d", c[i][j]);
             }
         }
     } else {
         printf("Null\n");
-
+        return 0;
 
     }
-    printf("\n");
-}
 
-
-void matrizMagica(int num) {
-    int a[num][num];
-    int i = 1;
-    int j = (1 + num) / 2;
-    int aux = 2;
-
-
-    if (num % 2 == 1) {
-        for (int i = 1; i <= num; i++) {
-            for (int j = 1; j <= num; j++) {
-                a[i][j] = 0;
-            }
-        }
-    } else {
-        return;
-    }
-
-    a[i][j] = 1;
-    while (aux <= (num * num)) {
-        i = i - 1;
-        j = j + 1;
-        if (i < 1 && j > num) {
-            i = i + 2;
-            j = j - 1;
-        } else {
-            if (i < 1) {
-                i = num;
-            }
-            if (j > num) {
-                j = 1;
-            }
-        }
-        if (a[i][j] == 0) {
-            a[i][j] = aux;
-        } else {
-            i += 2;
-            j -= 1;
-            a[i][j] = aux;
-        }
-        aux++;
-    }
-
-    for (int i = 1; i <= num; i++) {
-        for (int j = 1; j <= num; j++) {
-            printf("%d  ", a[i][j]);
-        }
-        printf("\n");
-    }
-
+    return aux;
 }
 
 
@@ -387,11 +336,7 @@ int main() {
 
                 break;
             case 9:
-                printf("--Matriz Magica--");
-                int num;
-                printf("Agregue una longitud a la matriz magica (Impar)\n");
-                scanf("%d", &num);
-                matrizMagica(num);
+                printf("---Matriz Magica--");
 
 
                 break;
