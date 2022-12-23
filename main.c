@@ -155,7 +155,7 @@ char aux_borrarEspacios() {
     return 0;
 }
 
-nt Numeros_Egolatras(int n){
+int Numeros_Egolatras(int n){
     int numeroDigitos =floor(log10(n)+1);
     char cadena [numeroDigitos + 1];;
 
