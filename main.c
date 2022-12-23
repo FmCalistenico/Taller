@@ -155,141 +155,6 @@ char aux_borrarEspacios() {
     return 0;
 }
 
-int Numeros_Egolatras(int n){
-    int numeroDigitos =floor(log10(n)+1);
-    char cadena [numeroDigitos + 1];;
-
-    sprintf (cadena,"%d",n);
-
-    int suma=0;
-    for(int i=0;i<numeroDigitos; i++){
-        int cont = cadena[i] - '0';
-
-        int elevado = pow(cont, numeroDigitos);
-        suma=suma +elevado;
-    }
-    if(suma==n){
-        return 1;
-    }else{
-        return 0;
-    }
-}
-
-int NumeroMagico(int number){
-    int ac, c, r, aux;
-    while (c <= 9) {
-        aux = number;
-        while (aux > 0) {
-            r = aux % 10;
-            if (r == c) {
-                ac = (ac * 10) + r;
-            }
-            aux = (aux - r) / 10;
-        }
-        c = c + 1;
-    }
-    int menor=ac;
-    int invert=0;
-    while(ac>0){
-        invert=(invert *10)+ (ac%10);
-        ac = ac/10;
-
-    }
-    int mayor=invert;
-
-    int resta=mayor-menor;
-    if(resta==number){
-        return 1;
-    }else{
-        return 0;
-    }
-
-}
-
-void Date (char date[10]) {
-
-
-    if (date[2] == '/' && date[5] == '/'&& date[9] !=
-                                           '\0'&& date[8] !=
-                                                  '\0'&&date[7] !=
-                                                        '\0'&&date[6] !=
-                                                              '\0') {
-        char mes;
-        char dia1=date[0];
-        char dia2=date[1];
-        char mes1=date[3];
-        char mes2=date[4];
-        char año1=date[6];
-        char año2=date[7];
-        char año3=date[8];
-        char año4=date[9];
-
-
-        if ( dia1=='0' || dia1=='1' ||dia1=='2'  ) {
-
-            if(mes1=='0' && mes2=='1'){
-                printf("%c%c de Enero de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }else if(mes1=='0' && mes2=='2'){
-                printf("%c%c de Febrero de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='3'){
-                printf("%c%c de Marzo de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='4'){
-                printf("%c%c de Abril de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='5'){
-                printf("%c%c de Mayo de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='6'){
-                printf("%c%c de Junio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='7'){
-                printf("%c%c de Julio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='7'){
-                printf("%c%c de Julio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='7'){
-                printf("%c%c de Julio de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='8'){
-                printf("%c%c de Agosto de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='0' && mes2=='9'){
-                printf("%c%c de Septiembre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='1' && mes2=='0'){
-                printf("%c%c de Octubre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            } else if(mes1=='1' && mes2=='1'){
-                printf("%c%c de Noviembre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-            else if(mes1=='1' && mes2=='2'){
-                printf("%c%c de Diciembre de %c%c%c%c",dia1,dia2,año1,año2,año3,año4);
-            }
-
-            else {
-                printf("El mes no es valido");
-            }
-
-
-        } else {
-            printf("El dia no es valido");
-        }
-    }
-    else{
-        printf("La fecha  no es correcta por favor ingresera con el formato=01/12/2022");
-    }
-
-
-
-}
-
-
-
-
-
-
 
 int productoPunto() {
 
@@ -301,7 +166,7 @@ int productoPunto() {
     printf("\nIngrese la longitud del vector 1\n");
     scanf("%d", &lenOne);
 
-    printf("Ingrese la longitud del vector 2\n");
+    printf("\nIngrese la longitud del vector 2\n");
     scanf("%d", &lenTwo);
 
 
@@ -334,7 +199,7 @@ int productoPunto() {
 
 }
 
-void multiplicacionMatriz() {
+int multiplicacionMatriz() {
     int a[15][15], b[15][15], c[15][15];
     int f1, f2, c1, c2;
 
@@ -377,7 +242,7 @@ void multiplicacionMatriz() {
             }
         }
 
-        printf("\n ----- Primer matriz -----");
+        printf("\nPrimer matriz8");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c1; ++j) {
@@ -385,79 +250,28 @@ void multiplicacionMatriz() {
             }
         }
 
-        printf("\n ----- Segunda matriz -----");
+        printf("\n Segunda matriz");
         for (int i = 0; i < f2; ++i) {
             printf("\n");
             for (int j = 0; j < c2; ++j) {
-                printf("\t%d", b[i][j]);
+                printf("%d", b[i][j]);
             }
         }
 
-        printf("\n --- Multiplicacion de matriz ---");
+        printf("\n Multiplicacion de matriz\n");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c2; ++j) {
-                printf("\t%d", c[i][j]);
+                printf("%d", c[i][j]);
             }
         }
     } else {
         printf("Null\n");
-
+        return 0;
 
     }
-    printf("\n");
-}
 
-
-void matrizMagica(int num) {
-    int a[num][num];
-    int i = 1;
-    int j = (1 + num) / 2;
-    int aux = 2;
-
-
-    if (num % 2 == 1) {
-        for (int i = 1; i <= num; i++) {
-            for (int j = 1; j <= num; j++) {
-                a[i][j] = 0;
-            }
-        }
-    } else {
-        return;
-    }
-
-    a[i][j] = 1;
-    while (aux <= (num * num)) {
-        i = i - 1;
-        j = j + 1;
-        if (i < 1 && j > num) {
-            i = i + 2;
-            j = j - 1;
-        } else {
-            if (i < 1) {
-                i = num;
-            }
-            if (j > num) {
-                j = 1;
-            }
-        }
-        if (a[i][j] == 0) {
-            a[i][j] = aux;
-        } else {
-            i += 2;
-            j -= 1;
-            a[i][j] = aux;
-        }
-        aux++;
-    }
-
-    for (int i = 1; i <= num; i++) {
-        for (int j = 1; j <= num; j++) {
-            printf("%d  ", a[i][j]);
-        }
-        printf("\n");
-    }
-
+    return aux;
 }
 
 
@@ -466,9 +280,9 @@ char *menu = "\t---MENU DE OPCIONES--- \n\n"
              "1. Numeros Romanos\n"
              "2. Factores Primos\n"
              "3. Borrar Espacios\n"
-             "4.  Numeros Egolatras \n"
-             "5. Numero Magico \n"
-             "6. Fechas\n"
+             "4. \n"
+             "5. \n"
+             "6. \n"
              "7. Producto Punto\n"
              "8. Multiplicacion de Matrices\n"
              "9. Matriz Magica\n"
@@ -483,8 +297,6 @@ int main() {
         scanf("%i", &menuOption);
         fflush(stdin);
         switch (menuOption) {
-            int num;
-            char date[0];
 
             case 0:
                 printf("Saliendo...\n");
@@ -503,29 +315,14 @@ int main() {
                 aux_borrarEspacios();
                 break;
             case 4:
-                num = 0;
-                printf("-------Numeros Egolatras-----\n");
-                printf("Ingrese el numero \n ");
-                scanf("%d",&num);
-                printf("El numero %d %s",num, Numeros_Egolatras( num)?"es egolatra":"No es egolatra\n");
 
                 break;
             case 5:
-
-                printf("-------Numeros Magico-----");
-                printf("Ingrese el numero \n ");
-                scanf("%d",&num);
-                printf("El numero %d %s",num,  NumeroMagico(num)?"es magico":"No es magico\n");
 
                 break;
 
             case 6:
 
-
-                printf("-------Fechas-----");
-                printf("Ingrese la fecha de la siguiente forma 02/12/2022 \n ");
-                scanf("%s",&date);
-                Date(date);
                 break;
             case 7:
                 printf("--Producto Punto--");
@@ -539,11 +336,7 @@ int main() {
 
                 break;
             case 9:
-                printf("--Matriz Magica--");
-                int num;
-                printf("Agregue una longitud a la matriz magica (Impar)\n");
-                scanf("%d", &num);
-                matrizMagica(num);
+                printf("---Matriz Magica--");
 
 
                 break;
