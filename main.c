@@ -155,27 +155,27 @@ char aux_borrarEspacios() {
     return 0;
 }
 
-int Numeros_Egolatras(int n){
-    int numeroDigitos =floor(log10(n)+1);
-    char cadena [numeroDigitos + 1];;
+int Numeros_Egolatras(int n) {
+    int numeroDigitos = floor(log10(n) + 1);
+    char cadena[numeroDigitos + 1];;
 
-    sprintf (cadena,"%d",n);
+    sprintf(cadena, "%d", n);
 
-    int suma=0;
-    for(int i=0;i<numeroDigitos; i++){
+    int suma = 0;
+    for (int i = 0; i < numeroDigitos; i++) {
         int cont = cadena[i] - '0';
 
         int elevado = pow(cont, numeroDigitos);
-        suma=suma +elevado;
+        suma = suma + elevado;
     }
-    if(suma==n){
+    if (suma == n) {
         return 1;
-    }else{
+    } else {
         return 0;
     }
 }
 
-int NumeroMagico(int number){
+int NumeroMagico(int number) {
     int ac, c, r, aux;
     while (c <= 9) {
         aux = number;
@@ -188,25 +188,25 @@ int NumeroMagico(int number){
         }
         c = c + 1;
     }
-    int menor=ac;
-    int invert=0;
-    while(ac>0){
-        invert=(invert *10)+ (ac%10);
-        ac = ac/10;
+    int menor = ac;
+    int invert = 0;
+    while (ac > 0) {
+        invert = (invert * 10) + (ac % 10);
+        ac = ac / 10;
 
     }
-    int mayor=invert;
+    int mayor = invert;
 
-    int resta=mayor-menor;
-    if(resta==number){
+    int resta = mayor - menor;
+    if (resta == number) {
         return 1;
-    }else{
+    } else {
         return 0;
     }
 
 }
 
-void Date (char date[10]) {
+void Date(char date[10]) {
 
 
     if (date[2] == '/' && date[5] == '/' && date[9] !=
@@ -267,6 +267,7 @@ void Date (char date[10]) {
         printf("La fecha  no es correcta por favor ingresera con el formato=01/12/2022");
     }
 }
+
 int productoPunto() {
 
     int vecOne[5], vecTwo[5];
@@ -277,7 +278,7 @@ int productoPunto() {
     printf("\nIngrese la longitud del vector 1\n");
     scanf("%d", &lenOne);
 
-    printf("\nIngrese la longitud del vector 2\n");
+    printf("Ingrese la longitud del vector 2\n");
     scanf("%d", &lenTwo);
 
 
@@ -353,7 +354,7 @@ int multiplicacionMatriz() {
             }
         }
 
-        printf("\nPrimer matriz8");
+        printf(" ---- Primer matriz -----");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c1; ++j) {
@@ -361,21 +362,22 @@ int multiplicacionMatriz() {
             }
         }
 
-        printf("\n Segunda matriz");
+        printf("\n ---- Segunda matriz ----");
         for (int i = 0; i < f2; ++i) {
             printf("\n");
             for (int j = 0; j < c2; ++j) {
-                printf("%d", b[i][j]);
+                printf("\t%d", b[i][j]);
             }
         }
 
-        printf("\n Multiplicacion de matriz\n");
+        printf("\n Multiplicacion de matriz ");
         for (int i = 0; i < f1; ++i) {
             printf("\n");
             for (int j = 0; j < c2; ++j) {
-                printf("%d", c[i][j]);
+                printf("\t%d", c[i][j]);
             }
         }
+        printf("\n");
     } else {
         printf("Null\n");
         return 0;
@@ -385,13 +387,62 @@ int multiplicacionMatriz() {
     return aux;
 }
 
+void matrizMagica(int num) {
+    int a[num][num];
+    int i = 1;
+    int j = (1 + num) / 2;
+    int aux = 2;
+
+
+    if (num % 2 == 1) {
+        for (int i = 1; i <= num; i++) {
+            for (int j = 1; j <= num; j++) {
+                a[i][j] = 0;
+            }
+        }
+    } else {
+        return;
+    }
+
+    a[i][j] = 1;
+    while (aux <= (num * num)) {
+        i = i - 1;
+        j = j + 1;
+        if (i < 1 && j > num) {
+            i = i + 2;
+            j = j - 1;
+        } else {
+            if (i < 1) {
+                i = num;
+            }
+            if (j > num) {
+                j = 1;
+            }
+        }
+        if (a[i][j] == 0) {
+            a[i][j] = aux;
+        } else {
+            i += 2;
+            j -= 1;
+            a[i][j] = aux;
+        }
+        aux++;
+    }
+
+    for (int i = 1; i <= num; i++) {
+        for (int j = 1; j <= num; j++) {
+            printf("%d  ", a[i][j]);
+        }
+        printf("\n");
+    }
+}
 
 int menuOption;
 char *menu = "\t---MENU DE OPCIONES--- \n\n"
              "1. Numeros Romanos\n"
              "2. Factores Primos\n"
              "3. Borrar Espacios\n"
-             "4.  Numeros Egolatras \n"
+             "4. Numeros Egolatras \n"
              "5. Numero Magico \n"
              "6. Fechas\n"
              "7. Producto Punto\n"
@@ -431,8 +482,8 @@ int main() {
                 num = 0;
                 printf("-------Numeros Egolatras-----\n");
                 printf("Ingrese el numero \n ");
-                scanf("%d",&num);
-                printf("El numero %d %s",num, Numeros_Egolatras( num)?"es egolatra":"No es egolatra\n");
+                scanf("%d", &num);
+                printf("El numero %d %s", num, Numeros_Egolatras(num) ? "es egolatra" : "No es egolatra\n");
 
 
                 break;
@@ -440,8 +491,8 @@ int main() {
             case 5:
                 printf("-------Numeros Magico-----\n");
                 printf("Ingrese el numero \n ");
-                scanf("%d",&num);
-                printf("El numero %d %s",num,  NumeroMagico(num)?"es magico":"No es magico\n");
+                scanf("%d", &num);
+                printf("El numero %d %s", num, NumeroMagico(num) ? "es magico" : "No es magico\n");
 
                 break;
 
@@ -449,7 +500,7 @@ int main() {
 
                 printf("-------Fechas-----\n");
                 printf("Ingrese la fecha de la siguiente forma 02/12/2022 \n ");
-                scanf("%s",&date);
+                scanf("%s", &date);
                 Date(date);
                 break;
 
@@ -466,7 +517,11 @@ int main() {
 
                 break;
             case 9:
+                num = 0;
                 printf("---Matriz Magica--");
+                printf("Agregue una longitud a la matriz magica (Impar)\n");
+                scanf("%d", &num);
+                matrizMagica(num);
 
 
                 break;
