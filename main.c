@@ -438,7 +438,7 @@ int main() {
                 break;
 
             case 5:
-                printf("-------Numeros Magico-----");
+                printf("-------Numeros Magico-----\n");
                 printf("Ingrese el numero \n ");
                 scanf("%d",&num);
                 printf("El numero %d %s",num,  NumeroMagico(num)?"es magico":"No es magico\n");
@@ -447,7 +447,7 @@ int main() {
 
             case 6:
 
-                printf("-------Fechas-----");
+                printf("-------Fechas-----\n");
                 printf("Ingrese la fecha de la siguiente forma 02/12/2022 \n ");
                 scanf("%s",&date);
                 Date(date);
