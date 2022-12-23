@@ -76,7 +76,7 @@ void factoresPrimos(int numero) {
         }
     }
 
-    // If n is a prime number greater than 2
+   
     if (numero > 2) {
         factores[num_factors] = numero;
         exponentes[num_factors] = 1;
